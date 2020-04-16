@@ -1,5 +1,7 @@
 const express = require ('express'); //constante express recebe todos os dados de do framework express
 const app = express(); //instanciar constante express
+
+app.use(express.json());
 /* 
   Rotas / Recursos
 */
@@ -20,10 +22,10 @@ const app = express(); //instanciar constante express
  * Request Body: 
  */
 
-app.get('/users/:id', (request,response) => {
-  const params = request.params;
+app.post('/users', (request,response) => {
+  const body = request.body;
 
-  console.log(params);
+  console.log(body);
 
   //return response.send("Hello Word");
   return response.json({
