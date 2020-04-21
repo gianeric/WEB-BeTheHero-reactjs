@@ -1,7 +1,11 @@
-const express = require ('express'); //constante express recebe todos os dados de do framework express
+const express = require('express'); //constante express recebe todos os dados de do framework express
+const routes = require('./routes');
+
 const app = express(); //instanciar constante express
 
 app.use(express.json());
+app.use(routes); //importante usar o routes abaixo do express.json !
+
 /* 
   Rotas / Recursos
 */
@@ -27,17 +31,10 @@ app.use(express.json());
   * NOSql: MongoDB, CrouchDB, etc
   */
 
-app.post('/users', (request,response) => {
-  const body = request.body;
-
-  console.log(body);
-
-  //return response.send("Hello Word");
-  return response.json({
-      evento: 'Semana OmniStack',
-      aluno: 'Gian Eric' 
-})
-});
+  /**
+   * Driver: SELECT * FROM USERS
+   * Query Builder: table('users').select('*')
+   */
 
 app.listen(3333); //ouvir a porta 3333
 
