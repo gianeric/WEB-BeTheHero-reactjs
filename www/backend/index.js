@@ -22,6 +22,11 @@ app.use(express.json());
  * Request Body: 
  */
 
+ /**
+  * SQL: MySql, SQLite, PostgreeSQL, Oracle, Microsoft SQL Server
+  * NOSql: MongoDB, CrouchDB, etc
+  */
+
 app.post('/users', (request,response) => {
   const body = request.body;
 
