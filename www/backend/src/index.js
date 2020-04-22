@@ -1,11 +1,12 @@
 const express = require('express'); //constante express recebe todos os dados de do framework express
-const routes = require('./routes');
+const routes  = require('./routes');
 
 const app = express(); //instanciar constante express
 
 app.use(express.json());
 app.use(routes); //importante usar o routes abaixo do express.json !
 
+app.listen(3333); //ouvir a porta 3333
 /* 
   Rotas / Recursos
 */
@@ -36,5 +37,5 @@ app.use(routes); //importante usar o routes abaixo do express.json !
    * Query Builder: table('users').select('*')
    */
 
-app.listen(3333); //ouvir a porta 3333
+
 
