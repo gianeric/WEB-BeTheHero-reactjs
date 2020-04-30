@@ -1,8 +1,14 @@
 const express = require('express'); //constante express recebe todos os dados de do framework express
+const cors    = require('cors');
 const routes  = require('./routes');
 
 const app = express(); //instanciar constante express
 
+// app.use(cors({
+//   origin: 'http://meuapp.com'
+// })); //Em produção somente a origem vai conseguir o acesso ao backend
+
+app.use(cors()); //Em desenvolvimento qualquer app front end tem acesso
 app.use(express.json());
 app.use(routes); //importante usar o routes abaixo do express.json !
 
