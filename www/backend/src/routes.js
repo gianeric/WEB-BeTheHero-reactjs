@@ -2,8 +2,11 @@ const express            = require('express'); //constante express recebe todos 
 const OngController      = require('./controllers/OngController');
 const IncidentController = require('./controllers/IncidentController');
 const ProfilerController = require('./controllers/ProfilerController');
+const SessionController  = require('./controllers/SessionController');
 
 const routes = express.Router();
+
+routes.post('/sessions', SessionController.create);
 
 routes.get('/ongs', OngController.index);
 routes.post('/ongs', OngController.create);
